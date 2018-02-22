@@ -1,0 +1,6 @@
+framework module Pods_NUHG {
+  umbrella header "Pods-NUHG-umbrella.h"
+
+  export *
+  module * { export * }
+}
