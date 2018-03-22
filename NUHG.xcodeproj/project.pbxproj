@@ -17,6 +17,8 @@
 		175C3B5B2046E572000DF51D /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C3B5A2046E572000DF51D /* UserDataService.swift */; };
 		175C3B5E2047FEFD000DF51D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C3B5D2047FEFD000DF51D /* Constants.swift */; };
 		175C3B602048122F000DF51D /* DateFormatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C3B5F2048122F000DF51D /* DateFormatService.swift */; };
+		175C3B642048FBB6000DF51D /* GestationPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C3B632048FBB6000DF51D /* GestationPickerVC.swift */; };
+		175C3B6620493881000DF51D /* NUHGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C3B6520493881000DF51D /* NUHGError.swift */; };
 		CDCF2AA8A3DB683C1C4898D1 /* Pods_NUHG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAA715EEF82A8F0F677E731 /* Pods_NUHG.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		175C3B5A2046E572000DF51D /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		175C3B5D2047FEFD000DF51D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		175C3B5F2048122F000DF51D /* DateFormatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatService.swift; sourceTree = "<group>"; };
+		175C3B632048FBB6000DF51D /* GestationPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestationPickerVC.swift; sourceTree = "<group>"; };
+		175C3B6520493881000DF51D /* NUHGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUHGError.swift; sourceTree = "<group>"; };
 		1DC94A96D5CEDC9E3E6B4111 /* Pods-NUHG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUHG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUHG/Pods-NUHG.debug.xcconfig"; sourceTree = "<group>"; };
 		96A57BC68C02072AA161B251 /* Pods-NUHG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUHG.release.xcconfig"; path = "Pods/Target Support Files/Pods-NUHG/Pods-NUHG.release.xcconfig"; sourceTree = "<group>"; };
 		BCAA715EEF82A8F0F677E731 /* Pods_NUHG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NUHG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,8 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				175C3B41203C8877000DF51D /* DataVC.swift */,
-				175C3B54203C8FC9000DF51D /* GraphVC.swift */,
+				175C3B632048FBB6000DF51D /* GestationPickerVC.swift */,
 				175C3B5820454CCD000DF51D /* DatePickerVC.swift */,
+				175C3B54203C8FC9000DF51D /* GraphVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				175C3B5D2047FEFD000DF51D /* Constants.swift */,
+				175C3B6520493881000DF51D /* NUHGError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -270,7 +276,9 @@
 				175C3B40203C8877000DF51D /* AppDelegate.swift in Sources */,
 				175C3B602048122F000DF51D /* DateFormatService.swift in Sources */,
 				175C3B5B2046E572000DF51D /* UserDataService.swift in Sources */,
+				175C3B6620493881000DF51D /* NUHGError.swift in Sources */,
 				175C3B5E2047FEFD000DF51D /* Constants.swift in Sources */,
+				175C3B642048FBB6000DF51D /* GestationPickerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +418,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BAXBGFT8F4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Charts\"",
+				);
 				INFOPLIST_FILE = NUHG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -428,9 +441,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BAXBGFT8F4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Charts\"",
+				);
 				INFOPLIST_FILE = NUHG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Ernest.NUHG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

@@ -40,17 +40,33 @@ class DataVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "birth" {
-            let popup = segue.destination as! DatePickerVC
-            popup.id = "birth"
+        if segue.identifier == "gestation" {
+            let destination = segue.destination as! GestationPickerVC
+            destination.id = "gestation"
+        } else if segue.identifier == "birth" {
+            let destination = segue.destination as! DatePickerVC
+            destination.id = "birth"
         } else if segue.identifier == "bloodTest" {
-            let popup = segue.destination as! DatePickerVC
-            popup.id = "bloodTest"
+            let destination = segue.destination as! DatePickerVC
+            destination.id = "bloodTest"
         } else if segue.identifier == "graph" {
-            let graph = segue.destination as! GraphVC
-            graph.sbValue = UserDataService.instance.sbValue
-            graph.hours = UserDataService.instance.getDateDifferenceInHours()
+            let destination = segue.destination as! GraphVC
+            if UserDataService.instance.sbValue < 450 {
+                destination.sbValue = UserDataService.instance.sbValue
+            } else {
+                destination.sbValue = 450
+            }
+            let hours = UserDataService.instance.getDateDifferenceInHours()
+            if hours < 120 {
+                destination.hours = hours
+            } else {
+                destination.hours = 120
+            }
         }
+    }
+    
+    @IBAction func switchToggled(_ sender: Any) {
+        UserDataService.instance.riskFactor = riskFactor.isOn
     }
     
     @objc func handleTap() {

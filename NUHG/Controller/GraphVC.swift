@@ -9,21 +9,20 @@
 import UIKit
 import Charts
 
+@IBDesignable
 class GraphVC: UIViewController {
 
     @IBOutlet weak var lineChart: LineChartView!
     var sbValue = 0
     var hours = 0
     
-    var sbP = [65.0, 80.0, 100.0, 115.0, 130.0, 145.0, 160.0, 175.0, 187.0, 200.0, 212.0, 223.0, 230.0, 233.0, 238.0, 242.0, 245.0, 251.0, 255.0, 255.0, 255.0]
-    
-    var sbET = [238.0, 246.0, 256.0, 270.0, 280.0, 292.0, 306.0, 316.0, 324.0, 331.0, 340.0, 349.0, 358.0, 366.0, 374.0, 378.0, 380.0, 380.0, 380.0, 380.0, 380.0]
+    var value = UserDataService.instance.getGraphData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let line1 = addLinePoints(sb: sbP)
-        let line2 = addLinePoints(sb: sbET)
+        let line1 = addLinePoints(sb: value.sbP, age: value.ageP)
+        let line2 = addLinePoints(sb: value.sbET, age: value.ageET)
         let point = [ChartDataEntry(x: Double(hours), y: Double(sbValue))]
         
         let lineP = LineChartDataSet(values: line1, label: "Phototherapy")
@@ -52,24 +51,27 @@ class GraphVC: UIViewController {
         data.addDataSet(lineET)
         data.addDataSet(linePoint)
         lineChart.data = data
+        
+        setupChart()
+    }
+    
+    func setupChart() {
         lineChart.dragEnabled = true
         lineChart.pinchZoomEnabled = true
         lineChart.xAxis.axisMaximum = 120.0
-        lineChart.leftAxis.axisMaximum = 450.0
-        lineChart.rightAxis.axisMaximum = 450.0
+        lineChart.leftAxis.axisMaximum = 500.0
+        lineChart.rightAxis.axisMaximum = 500.0
         lineChart.chartDescription?.text = "Neonatal Unconjugated Hyperbilirubinaemia"
-//        lineChart.xAxis.granularityEnabled = true
-//        lineChart.xAxis.granularity = 12.0
         lineChart.xAxis.labelPosition = .bottom
         lineChart.xAxis.setLabelCount(11, force: true)
-        lineChart.leftAxis.labelCount = 8
-        lineChart.rightAxis.labelCount = 8
+        lineChart.leftAxis.labelCount = 10
+        lineChart.rightAxis.labelCount = 10
     }
     
-    func addLinePoints(sb: [Double]) -> [ChartDataEntry] {
+    func addLinePoints(sb: [Double], age: [Double]) -> [ChartDataEntry] {
         var lineChartEntry = [ChartDataEntry]()
         for i in 0..<sb.count {
-            let value = ChartDataEntry(x: Double(i) * 6.0, y: sb[i])
+            let value = ChartDataEntry(x: age[i], y: sb[i])
             lineChartEntry.append(value)
         }
         return lineChartEntry
