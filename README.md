@@ -9,4 +9,5 @@ To Do:<br/>
   <li>Error handling for faulty input</li>
   <li>Graph generation history</li>
 </ul>
-  
+<br/>
+<button type="button">Download Beta</button>
