@@ -10,4 +10,5 @@ To Do:<br/>
   <li>Graph generation history</li>
 </ul>
 <br/>
-<button type="button">Download Beta</button>
+<a href="itms-services://?action=download-manifest&url=https://github.com/ErnestFan/NUHG/blob/master/manifest.plist?raw=true">
+<button type="button">Download Beta</button></a>
