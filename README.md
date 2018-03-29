@@ -9,4 +9,6 @@ To Do:<br/>
   <li>Error handling for faulty input</li>
   <li>Graph generation history</li>
 </ul>
-  
+<br/>
+<a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/ErnestFan/NUHG/master/manifest.plist">
+<button type="button">Download Beta</button></a>
