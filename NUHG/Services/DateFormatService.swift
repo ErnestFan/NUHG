@@ -29,7 +29,7 @@ class DateFormatService {
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
         
-        if let first = dateFormatter.date(from: firstDate) as? Date, let second = dateFormatter.date(from: secondDate) as? Date {
+        if let first = dateFormatter.date(from: firstDate), let second = dateFormatter.date(from: secondDate) {
             print("First Date: \(first.description)")
             print("Second Date: \(second.description)")
             let difference = Int(second.timeIntervalSince(first) / 3600)

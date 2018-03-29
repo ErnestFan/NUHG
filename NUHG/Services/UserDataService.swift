@@ -16,15 +16,10 @@ class UserDataService {
     public var riskFactor = false
     public var dateOfBirth = "Select Date"
     public var dateOfBloodTest = "Select Date"
-    public var sbValue = 0
+    public var sbValue = -1
     
     func getDateDifferenceInHours() -> Int {
-        if dateOfBloodTest != "Select Date" && dateOfBirth != "Select Date" {
-            return DateFormatService.instance.hoursDifferenceBetweenDates(dateOfBirth, dateOfBloodTest)
-        } else {
-            print("Error: Please Select Date")
-        }
-        return -1
+        return DateFormatService.instance.hoursDifferenceBetweenDates(dateOfBirth, dateOfBloodTest)
     }
     
     func getGraphData() -> (sbP: [Double], ageP: [Double], sbET: [Double], ageET: [Double]) {
@@ -53,14 +48,25 @@ class UserDataService {
         return ([0.0],[0.0],[0.0],[0.0])
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func checkForError(completionHandler completion: (NUHGError?) -> Void) {
+        if(gestation == "Select weeks") {
+            completion(NUHGError.gestationEmpty)
+            return
+        }
+        if(dateOfBirth == "Select Date" || dateOfBloodTest == "Select Date") {
+            completion(NUHGError.dateEmpty)
+            return
+        }
+        if(getDateDifferenceInHours() < 0) {
+            completion(NUHGError.dateMinimum)
+            return
+        }
+        if(sbValue < 0) {
+            completion(NUHGError.sbMinimum)
+            return
+        }
+        completion(nil)
+    }
+
     
 }

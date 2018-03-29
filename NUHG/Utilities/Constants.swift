@@ -14,7 +14,7 @@ let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 
 // Gestation Constant
 
-let gestationData = ["Under 26weeks", "26weeks to 28weeks + 6days", "29weeks to 31weeks + 6days", "32weeks to 34weeks + 6days", "35weeks to 37weeks + 6days", "38weeks+"]
+let gestationData = ["Under 26W", "26W to 28W6D", "29W to 31W6D", "32W to 34W6D", "35W to 37W6D", "38W"]
 
 // Graph Value Constant
 
