@@ -102,7 +102,6 @@ class DataVC: UIViewController {
                 UserDataService.instance.sbValue = sb
             }
         }
-        print("Dismiss Keyboard")
     }
     
     @IBAction func generateGraph(_ sender: Any) {

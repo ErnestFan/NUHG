@@ -40,11 +40,12 @@ class GraphVC: UIViewController {
         lineET.drawHorizontalHighlightIndicatorEnabled = false
         
         let linePoint = LineChartDataSet(values: point, label: "Patient")
-        linePoint.circleColors = [NSUIColor.red]
-        linePoint.circleHoleColor = NSUIColor.red
+        linePoint.circleColors = [NSUIColor.black]
+        linePoint.circleHoleColor = NSUIColor.black
         linePoint.colors = [NSUIColor.red]
         linePoint.drawVerticalHighlightIndicatorEnabled = false
         linePoint.drawHorizontalHighlightIndicatorEnabled = false
+        linePoint.circleRadius = 5.0
         
         let data = LineChartData()
         data.addDataSet(lineP)
@@ -62,10 +63,11 @@ class GraphVC: UIViewController {
         lineChart.leftAxis.axisMaximum = 500.0
         lineChart.rightAxis.axisMaximum = 500.0
         lineChart.chartDescription?.text = "Neonatal Unconjugated Hyperbilirubinaemia"
+        lineChart.chartDescription?.font = UIFont.systemFont(ofSize: 10.0, weight: UIFont.Weight.thin)
         lineChart.xAxis.labelPosition = .bottom
         lineChart.xAxis.setLabelCount(11, force: true)
-        lineChart.leftAxis.labelCount = 10
-        lineChart.rightAxis.labelCount = 10
+        lineChart.leftAxis.setLabelCount(10, force: true)
+        lineChart.rightAxis.setLabelCount(10, force: true)
     }
     
     func addLinePoints(sb: [Double], age: [Double]) -> [ChartDataEntry] {

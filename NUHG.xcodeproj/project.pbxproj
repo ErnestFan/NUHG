@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17209D52207302F700482EE8 /* ClampedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17209D51207302F700482EE8 /* ClampedDate.swift */; };
 		175C3B40203C8877000DF51D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C3B3F203C8877000DF51D /* AppDelegate.swift */; };
 		175C3B42203C8877000DF51D /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C3B41203C8877000DF51D /* DataVC.swift */; };
 		175C3B45203C8877000DF51D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175C3B43203C8877000DF51D /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17209D51207302F700482EE8 /* ClampedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClampedDate.swift; sourceTree = "<group>"; };
 		175C3B3C203C8877000DF51D /* NUHG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUHG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175C3B3F203C8877000DF51D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		175C3B41203C8877000DF51D /* DataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				175C3B5D2047FEFD000DF51D /* Constants.swift */,
 				175C3B6520493881000DF51D /* NUHGError.swift */,
+				17209D51207302F700482EE8 /* ClampedDate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17209D52207302F700482EE8 /* ClampedDate.swift in Sources */,
 				175C3B42203C8877000DF51D /* DataVC.swift in Sources */,
 				175C3B55203C8FC9000DF51D /* GraphVC.swift in Sources */,
 				175C3B5920454CCD000DF51D /* DatePickerVC.swift in Sources */,
@@ -426,7 +430,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Charts\"",
 				);
 				INFOPLIST_FILE = NUHG/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ernest.NUHG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,7 +455,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Charts\"",
 				);
 				INFOPLIST_FILE = NUHG/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Ernest.NUHG;

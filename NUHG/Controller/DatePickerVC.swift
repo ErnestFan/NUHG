@@ -23,14 +23,12 @@ class DatePickerVC: UIViewController {
 
     @IBAction func saveDate(_ sender: Any) {
         if id == "birth" {
-            UserDataService.instance.dateOfBirth = DateFormatService.instance.dateFormatter(datePicker)
+            UserDataService.instance.dateOfBirth = DateFormatService.instance.dateFormatter(datePicker.clampedDate)
             NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         } else if id == "bloodTest" {
-            UserDataService.instance.dateOfBloodTest = DateFormatService.instance.dateFormatter(datePicker)
+            UserDataService.instance.dateOfBloodTest = DateFormatService.instance.dateFormatter(datePicker.clampedDate)
             NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         }
-        print(UserDataService.instance.dateOfBirth)
-        print(UserDataService.instance.dateOfBloodTest)
         dismiss(animated: true, completion: nil)
     }
     
