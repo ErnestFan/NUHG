@@ -9,3 +9,6 @@ To Do:<br/>
   <li>Graph generation history</li>
 </ul>
 <br/>
+<img>https://github.com/ErnestFan/NUHG/blob/master/Images/NUHG_screenshot_1.png?raw=true</img>
+<img>https://github.com/ErnestFan/NUHG/blob/master/Images/NUHG_screenshot_2.png?raw=true</img>
+<img>https://github.com/ErnestFan/NUHG/blob/master/Images/NUHG_screenshot_3.png?raw=true</img>
