@@ -9,3 +9,9 @@ To Do:<br/>
   <li>Graph generation history</li>
 </ul>
 <br/>
+Screenshots:<br/><br/>
+<img src="https://github.com/ErnestFan/NUHG/blob/master/Images/NUHG_screenshot_1.png?raw=true" width="200">
+<img src="https://github.com/ErnestFan/NUHG/blob/master/Images/NUHG_screenshot_2.png?raw=true" width="200">
+<img src="https://github.com/ErnestFan/NUHG/blob/master/Images/NUHG_screenshot_3.png?raw=true" width="200">
+<br/><br/>
+<button><a href="https://itunes.apple.com/ca/app/nuhg/id1363007153?mt=8">Download on App Store</a></button>
