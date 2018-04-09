@@ -9,7 +9,7 @@
 import UIKit
 
 class DataVC: UIViewController {
-
+    
     @IBOutlet weak var gestationBtn: UIButton!
     @IBOutlet weak var riskFactor: UISwitch!
     @IBOutlet weak var birthBtn: UIButton!
@@ -19,6 +19,7 @@ class DataVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.bindToKeyboard()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(DataVC.handleTap))
         view.addGestureRecognizer(tap)
@@ -34,6 +35,7 @@ class DataVC: UIViewController {
         gestationBtn.setTitle("Select Weeks", for: .normal)
         birthBtn.setTitle("Select Date", for: .normal)
         bloodTestBtn.setTitle("Select Date", for: .normal)
+        sbValue.addDoneButtonOnKeyboard()
     }
     
     @objc func updateView(_ notif: Notification) {

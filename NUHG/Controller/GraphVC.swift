@@ -26,31 +26,43 @@ class GraphVC: UIViewController {
         let point = [ChartDataEntry(x: Double(hours), y: Double(sbValue))]
         
         let lineP = LineChartDataSet(values: line1, label: "Phototherapy")
-        lineP.colors = [NSUIColor.blue]
-        lineP.drawCirclesEnabled = false
-        lineP.drawValuesEnabled = false
-        lineP.drawVerticalHighlightIndicatorEnabled = false
-        lineP.drawVerticalHighlightIndicatorEnabled = false
-        
         let lineET = LineChartDataSet(values: line2, label: "Exchange Transfusion")
-        lineET.colors = [NSUIColor.green]
-        lineET.drawCirclesEnabled = false
-        lineET.drawValuesEnabled = false
-        lineET.drawVerticalHighlightIndicatorEnabled = false
-        lineET.drawHorizontalHighlightIndicatorEnabled = false
-        
         let linePoint = LineChartDataSet(values: point, label: "Patient")
-        linePoint.circleColors = [NSUIColor.black]
-        linePoint.circleHoleColor = NSUIColor.black
-        linePoint.colors = [NSUIColor.red]
-        linePoint.drawVerticalHighlightIndicatorEnabled = false
-        linePoint.drawHorizontalHighlightIndicatorEnabled = false
-        linePoint.circleRadius = 5.0
         
         let data = LineChartData()
-        data.addDataSet(lineP)
-        data.addDataSet(lineET)
-        data.addDataSet(linePoint)
+        
+//
+//
+//        lineP.colors = [NSUIColor.blue]
+//        lineP.drawCirclesEnabled = false
+//        lineP.drawValuesEnabled = false
+//        lineP.drawVerticalHighlightIndicatorEnabled = false
+//        lineP.drawVerticalHighlightIndicatorEnabled = false
+//
+//
+//        lineET.colors = [NSUIColor.green]
+//        lineET.drawCirclesEnabled = false
+//        lineET.drawValuesEnabled = false
+//        lineET.drawVerticalHighlightIndicatorEnabled = false
+//        lineET.drawHorizontalHighlightIndicatorEnabled = false
+//
+//
+//        linePoint.circleColors = [NSUIColor.black]
+//        linePoint.circleHoleColor = NSUIColor.black
+//        linePoint.colors = [NSUIColor.red]
+//        linePoint.drawVerticalHighlightIndicatorEnabled = false
+//        linePoint.drawHorizontalHighlightIndicatorEnabled = false
+//        linePoint.circleRadius = 5.0
+//
+//
+//        data.addDataSet(lineP)
+//        data.addDataSet(lineET)
+//        data.addDataSet(linePoint)
+//
+        setupLine(line: lineP, data: data)
+        setupLine(line: lineET, data: data)
+        setupLine(line: linePoint, data: data)
+        
         lineChart.data = data
         
         setupChart()
@@ -77,6 +89,27 @@ class GraphVC: UIViewController {
             lineChartEntry.append(value)
         }
         return lineChartEntry
+    }
+    
+    func setupLine(line: LineChartDataSet, data: LineChartData) {
+        if line.label == "Phototherapy" {
+            line.colors = [NSUIColor.blue]
+            line.drawCirclesEnabled = false
+            line.drawValuesEnabled = false
+        } else if line.label == "Exchange Transfusion" {
+            line.colors = [NSUIColor.green]
+            line.drawCirclesEnabled = false
+            line.drawValuesEnabled = false
+        } else {
+            line.circleColors = [NSUIColor.black]
+            line.circleHoleColor = NSUIColor.black
+            line.colors = [NSUIColor.red]
+            line.circleRadius = 5.0
+        }
+        line.drawVerticalHighlightIndicatorEnabled = false
+        line.drawHorizontalHighlightIndicatorEnabled = false
+        
+        data.addDataSet(line)
     }
 
     @IBAction func closePressed(_ sender: Any) {
