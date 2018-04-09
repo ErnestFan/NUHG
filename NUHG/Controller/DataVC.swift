@@ -66,12 +66,6 @@ class DataVC: UIViewController {
                 destination.hours = hours
             } else {
                 destination.hours = 120
-//                let alertController = UIAlertController(title: "Maximum of Date Difference", message: "The maximum of difference between Date of Birth and Date of Blood Test is 120 hours in order to display the graph properly.", preferredStyle: .actionSheet)
-//                
-//                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-//                alertController.addAction(action)
-//
-//                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
@@ -103,6 +97,8 @@ class DataVC: UIViewController {
             } else {
                 UserDataService.instance.sbValue = sb
             }
+        } else {
+            UserDataService.instance.sbValue = -1
         }
     }
     

@@ -21,7 +21,7 @@ extension NUHGError {
         case .dateEmpty: return "Date of Birth and Date of Blood Test cannot be empty"
         case .gestationEmpty: return "Please select the duration of Gestation"
         case .dateMinimum: return "Date of Birth has to be earlier than Date Blood Test"
-        case .sbMinimum: return "SB value has to be a positive integer"
+        case .sbMinimum: return "SB value cannot be empty or negative"
         }
     }
 }

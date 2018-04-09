@@ -31,34 +31,6 @@ class GraphVC: UIViewController {
         
         let data = LineChartData()
         
-//
-//
-//        lineP.colors = [NSUIColor.blue]
-//        lineP.drawCirclesEnabled = false
-//        lineP.drawValuesEnabled = false
-//        lineP.drawVerticalHighlightIndicatorEnabled = false
-//        lineP.drawVerticalHighlightIndicatorEnabled = false
-//
-//
-//        lineET.colors = [NSUIColor.green]
-//        lineET.drawCirclesEnabled = false
-//        lineET.drawValuesEnabled = false
-//        lineET.drawVerticalHighlightIndicatorEnabled = false
-//        lineET.drawHorizontalHighlightIndicatorEnabled = false
-//
-//
-//        linePoint.circleColors = [NSUIColor.black]
-//        linePoint.circleHoleColor = NSUIColor.black
-//        linePoint.colors = [NSUIColor.red]
-//        linePoint.drawVerticalHighlightIndicatorEnabled = false
-//        linePoint.drawHorizontalHighlightIndicatorEnabled = false
-//        linePoint.circleRadius = 5.0
-//
-//
-//        data.addDataSet(lineP)
-//        data.addDataSet(lineET)
-//        data.addDataSet(linePoint)
-//
         setupLine(line: lineP, data: data)
         setupLine(line: lineET, data: data)
         setupLine(line: linePoint, data: data)
